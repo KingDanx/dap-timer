@@ -1,7 +1,10 @@
 {
   "name": "@kingdanx/dap-timer",
   "module": "models/dap-timer.js",
-  "version": "1.0.0",
+  "version": "1.0.1 (2025.08.08)",
+  "scripts": {
+    "build": "bun ./build/build.js"
+  },
   "type": "module",
   "devDependencies": {
     "@types/bun": "latest"

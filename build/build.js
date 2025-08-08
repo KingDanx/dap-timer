@@ -14,7 +14,6 @@ if (!json.version) {
  * @param {string} version
  */
 function bumpVersion(version) {
-  console.log(version);
   if (isNaN(version)) {
     throw new Error("version provided is not a number");
   }
@@ -25,7 +24,7 @@ function bumpVersion(version) {
 
 async function writeToJSON() {
   try {
-    await fs.writeFile("../package.json", JSON.stringify(json, null, 2));
+    await fs.writeFile(path.join(import.meta.dir, "..", "package.json"), JSON.stringify(json, null, 2));
     console.log("version successfully updated to:", json.version);
   } catch (e) {
     console.error(e);
@@ -110,7 +109,6 @@ try {
       break;
     case values.build:
       const newBuild = bumpVersion(build.slice(0, build.indexOf(" ")).trim());
-      console.log(newBuild);
       json.version = `${major}.${minor}.${newBuild} ${versionDateString}`;
       await writeToJSON();
       break;
