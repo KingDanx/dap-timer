@@ -24,7 +24,10 @@ function bumpVersion(version) {
 
 async function writeToJSON() {
   try {
-    await fs.writeFile(path.join(import.meta.dir, "..", "package.json"), JSON.stringify(json, null, 2));
+    await fs.writeFile(
+      path.join(import.meta.dir, "..", "package.json"),
+      JSON.stringify(json, null, 2)
+    );
     console.log("version successfully updated to:", json.version);
   } catch (e) {
     console.error(e);
@@ -93,23 +96,26 @@ try {
     day = `0${day}`;
   }
 
-  const versionDateString = `(${year}.${month}.${day})`;
+  const versionDateString = `${year}.${month}.${day}`;
 
   switch (true) {
     case values.major:
       const newMajor = bumpVersion(major);
-      json.version = `${newMajor}.${minor}.${build} ${versionDateString}`;
+      json.version = `${newMajor}.${minor}.${build}`;
+      json.date = versionDateString;
       await writeToJSON();
       break;
     case values.minor:
       const newMinor = bumpVersion(minor);
-      json.version = `${major}.${newMinor}.${build} ${versionDateString}`;
+      json.version = `${major}.${newMinor}.${build}`;
+      json.date = versionDateString;
       await writeToJSON();
 
       break;
     case values.build:
-      const newBuild = bumpVersion(build.slice(0, build.indexOf(" ")).trim());
-      json.version = `${major}.${minor}.${newBuild} ${versionDateString}`;
+      const newBuild = bumpVersion(build);
+      json.version = `${major}.${minor}.${newBuild}`;
+      json.date = versionDateString;
       await writeToJSON();
       break;
     default:
