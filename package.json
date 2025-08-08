@@ -1,5 +1,5 @@
 {
-  "name": "dap-timer",
+  "name": "@kingdanx/dap-timer",
   "module": "models/dap-timer.js",
   "version": "1.0.0",
   "type": "module",
