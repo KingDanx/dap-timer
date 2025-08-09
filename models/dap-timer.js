@@ -67,7 +67,7 @@ export default class DAPTimer {
     const elapsed = (end - start) / 1000;
     return {
       string: elapsed.toFixed(2) + "s",
-      number: elapsed,
+      number: Number(elapsed.toFixed(2)),
     };
   }
 
