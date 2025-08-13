@@ -31,13 +31,17 @@ bun add dap-timer
 ## Usage
 
 ```javascript
-import { start, stop } from 'dap-timer';
+import Timer from 'dap-timer';
 
-start('myTimer');
+const timer = new Timer();
 
-// Your code here...
+timer.time('label');
 
-stop('myTimer');
+await someAsyncOperation();
+
+const duration = timer.endTime('label');
+
+console.log(duration);
 ```
 
 ---
