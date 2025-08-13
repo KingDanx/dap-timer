@@ -6,7 +6,7 @@ A lightweight timer utility for Node.js environments, offering functionality sim
 
 ## Features
 
-- **High Precision Timing**: Measure elapsed time with high accuracy.
+- **Timing**: Measure elapsed time.
 - **Simple API**: Easy-to-use interface for developers.
 - **Lightweight**: Minimalistic design with no external dependencies.
 
