@@ -33,6 +33,12 @@ export default class DAPTimer {
         number: number;
     };
     /**
+     * @param {string|null} label - name associated with this timer
+     * @param {"log"|"info"|"warn"|"error"|null} logType - log type
+     * @returns {string}
+     */
+    timeLog(label?: string | null, logType?: "log" | "info" | "warn" | "error" | null): string;
+    /**
      *
      * @param {number|null} start
      * @param {number|null} end

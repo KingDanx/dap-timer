@@ -1,3 +1,4 @@
+import { prototype } from "events";
 import { performance } from "perf_hooks";
 
 /**
@@ -61,6 +62,20 @@ export default class DAPTimer {
       this.end = null;
       return time;
     }
+  }
+
+  /**
+   * @param {string|null} label - name associated with this timer
+   * @param {"log"|"info"|"warn"|"error"|null} logType - log type
+   * @returns {string}
+   */
+  timeLog(label = null, logType = null) {
+    const duration = this.timeEnd(label);
+    const message = `${label} has completed with a duration of ${duration.string}`;
+    if (logType && typeof console[logType] === "function") {
+      console[logType](message);
+    }
+    return message;
   }
 
   /**
