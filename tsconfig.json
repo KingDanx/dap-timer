@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "allowJs": true,
+    "checkJs": true, // required to generate types from JS files with JSDoc
+    "declaration": true, // <-- generate .d.ts
+    "emitDeclarationOnly": true, // <-- only output .d.ts, no JS
+    "outDir": "./types",
+    "strict": true,
+    "moduleResolution": "bundler"
+  },
+  "include": ["index.js"], // point to your JS source files
+  "exclude": ["node_modules", "tests", "scripts", "build.js"]
+}

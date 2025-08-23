@@ -28,7 +28,7 @@ export default class DAPTimer {
    *
    * @param {string | null} label - name associated with this timer
    */
-  time(label) {
+  time(label = null) {
     const start = performance.now();
     if (label) {
       this.times.set(label, start);
@@ -39,9 +39,9 @@ export default class DAPTimer {
 
   /**
    *
-   * @param {label} label - name associated with this timer
+   * @param {string|null} label - name associated with this timer
    */
-  timeEnd(label) {
+  timeEnd(label = null) {
     const end = performance.now();
     if (label) {
       if (!this.times.has(label)) {
@@ -63,7 +63,17 @@ export default class DAPTimer {
     }
   }
 
+  /**
+   *
+   * @param {number|null} start
+   * @param {number|null} end
+   * @returns
+   * @throws {Error}
+   */
   toSeconds(start = this.start, end = this.end) {
+    if (!start || !end) {
+      throw new Error("start and end values cannot be null");
+    }
     const elapsed = (end - start) / 1000;
     return {
       string: elapsed.toFixed(2) + "s",
@@ -71,7 +81,12 @@ export default class DAPTimer {
     };
   }
 
-  clear(label) {
+  /**
+   *
+   * @param {string|null} label
+   * @returns
+   */
+  clear(label = null) {
     if (label) {
       return this.times.delete(label);
     }
