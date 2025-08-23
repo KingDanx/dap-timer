@@ -3,7 +3,11 @@
   "module": "index.js",
   "main": "index.js",
   "types": "types/index.d.ts",
-  "version": "1.0.7",
+  "version": "1.0.8",
+  "files": [
+    "index.js",
+    "types"
+  ],
   "date": "2025.08.23",
   "scripts": {
     "build": "npx tsc && bun ./build/build.js"
@@ -15,5 +19,8 @@
   },
   "peerDependencies": {
     "typescript": "^5"
+  },
+  "dependencies": {
+    "@kingdanx/dap-timer": "^1.0.7"
   }
 }
