@@ -1,12 +1,13 @@
 {
   "name": "@kingdanx/dap-timer",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "type": "module",
   "main": "index.js",
   "types": "types/index.d.ts",
   "files": [
     "index.js",
-    "types"
+    "types",
+    "models"
   ],
   "date": "2025.08.23",
   "scripts": {
