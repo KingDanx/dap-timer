@@ -8,7 +8,8 @@
     "emitDeclarationOnly": true, // <-- only output .d.ts, no JS
     "outDir": "./types",
     "strict": true,
-    "moduleResolution": "bundler"
+    "moduleResolution": "bundler",
+    "skipLibCheck": true
   },
   "include": ["index.js"], // point to your JS source files
   "exclude": ["node_modules", "tests", "scripts", "build.js"]

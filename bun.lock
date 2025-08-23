@@ -5,6 +5,7 @@
       "name": "dap-timer",
       "devDependencies": {
         "@types/bun": "latest",
+        "typescript": "^5.9.2",
       },
       "peerDependencies": {
         "typescript": "^5",
