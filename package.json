@@ -1,9 +1,9 @@
 {
   "name": "@kingdanx/dap-timer",
-  "module": "index.js",
+  "version": "1.0.9",
+  "type": "module",
   "main": "index.js",
   "types": "types/index.d.ts",
-  "version": "1.0.8",
   "files": [
     "index.js",
     "types"
@@ -12,15 +12,8 @@
   "scripts": {
     "build": "npx tsc && bun ./build/build.js"
   },
-  "type": "module",
   "devDependencies": {
-    "@types/bun": "latest",
-    "typescript": "^5.9.2"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
-  },
-  "dependencies": {
-    "@kingdanx/dap-timer": "^1.0.7"
+    "typescript": "^5.9.2",
+    "@types/bun": "latest"
   }
 }
