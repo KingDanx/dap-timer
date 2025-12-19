@@ -1,4 +1,3 @@
-import { prototype } from "events";
 import { performance } from "perf_hooks";
 
 /**

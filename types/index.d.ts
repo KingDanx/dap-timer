@@ -1,1 +1,1 @@
-export { default } from "./models/dap-timer";
+export { default } from "./models/dap-timer.js";
